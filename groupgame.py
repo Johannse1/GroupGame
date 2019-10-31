@@ -17,8 +17,12 @@ def play_game():
         player_one = roll()
         player_two = roll()
         print(f"player ones roll: {player_one}")
+        print(f"player twos roll: {player_two}")
         input("press enter to roll again:")
     if player_one > player_two:
-        p1_points + 1
+        print(f"player one wins with a roll of {player_one}")
+        p1_points = p1_points + 1
+    elif player_one == player_two:
+
 
 
