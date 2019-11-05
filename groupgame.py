@@ -9,6 +9,18 @@ def roll():
     num = random.randint(1,6)
     return num
 
+def win_counter():
+    p1_wins = 0
+    p2_wins = 0
+    while p1_points >= 0 or p2_points >= 0:
+        for num in wins:
+            if num == 'player one':
+                 p1_wins = p1_wins + 1
+            elif num == 'player two':
+                 p2_wins = p2_wins + 1
+
+            print(f"player 1 wins: {p1_wins}")
+            print(f"player 2 wins: {p2_wins}")
 
 def play_game():
     wins = []
@@ -42,8 +54,14 @@ def play_game():
         print("Player two Wins!")
         wins.append("player two")
 
-    # luis - right here should be code that shows how many wins each player has
-    # take them from the list that i created at the top
+    win_counter()
+
+    play_again = input("Play Again?: ")
+    if play_again == 'yes':
+        play_game()
+    else:
+        return
+
 
 
 play_game()
